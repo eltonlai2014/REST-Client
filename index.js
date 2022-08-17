@@ -53,7 +53,7 @@ let main = async () => {
     axios.defaults.headers.common = { 'Authorization': `Bearer ${userToken.mxviewGateway}` }
 
     // target devices ip
-    const LLDP_IPs = ['192.168.127.105'];
+    const LLDP_IPs = ['192.168.127.106'];
 
     // get siteId
     let sites = await getSite();

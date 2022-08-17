@@ -30,7 +30,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkb
 ~~~
 ---
 ## 查站台下的設備資訊
- [GET] http://127.0.0.1/api/devices/ip/192.168.127.105/site/5395af66cfb8ce68
+ [GET] http://127.0.0.1/api/devices/ip/192.168.127.106/site/5395af66cfb8ce68
 ~~~js
 [
   {
