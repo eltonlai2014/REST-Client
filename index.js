@@ -1,10 +1,11 @@
 const axios = require('axios').default;
 
-const mxviewURL = `http://192.168.56.101`;
+const mxviewURL = `http://127.0.0.1`;
 const loginURL  = `${mxviewURL}/login`;
 const logoutURL = `${mxviewURL}/api/logout`;
 const sitesURL  = `${mxviewURL}/api/sites`;
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 let main = async () => {
     let login = async (userInfo) => {
         try {
@@ -53,22 +54,22 @@ let main = async () => {
     axios.defaults.headers.common = { 'Authorization': `Bearer ${userToken.mxviewGateway}` }
 
     // target devices ip
-    const LLDP_IPs = ['192.168.127.106'];
+    const DEVICE_IPs = ['192.168.123.163'];
 
     // get siteId
     let sites = await getSite();
     for (siteInfo of sites) {
         console.log(JSON.stringify(siteInfo));
-        for (deviceIP of LLDP_IPs) {
+        for (deviceIP of DEVICE_IPs) {
             // Get device information by its IP address
             let devices = await getDeviesByIP(deviceIP, siteInfo.site_id);
             if (devices != null && Array.isArray(devices) && devices.length > 0) {
-                console.log('devices', devices);
                 let aDeviceInfo = devices[0];
-                let lldpRemPortId = aDeviceInfo.device_components.lldpRemPortId;
-                let lldpRemSysName = aDeviceInfo.device_components.lldpRemSysName;
-                console.log('lldpRemPortId', JSON.stringify(lldpRemPortId));
-                console.log('lldpRemSysName', JSON.stringify(lldpRemSysName));
+                console.log(JSON.stringify(aDeviceInfo));
+                // let lldpRemPortId = aDeviceInfo.device_components.lldpRemPortId;
+                // let lldpRemSysName = aDeviceInfo.device_components.lldpRemSysName;
+                // console.log('lldpRemPortId', JSON.stringify(lldpRemPortId));
+                // console.log('lldpRemSysName', JSON.stringify(lldpRemSysName));
             }
         }
     }

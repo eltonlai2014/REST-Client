@@ -7,11 +7,20 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "CLI Object",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\cli.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "API Client",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\index.js"
-        }
+        }        
     ]
 }

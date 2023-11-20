@@ -1,6 +1,3 @@
-## github
-* https://github.com/eltonlai2014/REST-Client
----
 ## 登入MXView，透過API Key Management 建立API token
 * API 查詢Header都要帶token
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjUwMzYwNTU5LCJleHAiOjE2NTAzNjIzNTksImp0aSI6Ijc4OGZmZDBhOTdhMWYyNTZmZDljYjhlN2JlNWY2MjdkZjA3NzBkYzAifQ.Lpe_tMkeymJqx4F6waKn2LKraIyQ3YoIy7xYCEdB9II
@@ -31,7 +28,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkb
   }
 ]
 ~~~
----
+
 ## 查站台下的設備資訊
  [GET] http://127.0.0.1/api/devices/ip/192.168.127.106/site/5395af66cfb8ce68
 ~~~js
